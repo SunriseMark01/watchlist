@@ -1,13 +1,17 @@
 from markupsafe import escape
 
-from flask import Flask, url_for,render_template
+from flask import Flask, url_for, render_template
 
 app = Flask(__name__)
 
 
 @app.route('/')
 def hello():
-    return '<h1>Lacrimosa of Dana</h1>'
+    return fr'''<head>
+    <title>mxt's Homepage</title>
+    <link rel="icon" href="/static/icon.ico">
+    </head>
+    <h1>Lacrimosa of Dana</h1>'''
 
 
 @app.route('/user/<name>')
@@ -28,7 +32,7 @@ def test_url_for():
     return 'Test page'
 
 
-name = 'Grey Li'
+name = 'Xiaoteng Ma'
 movies = [
     {'title': 'My Neighbor Totoro', 'year': '1988'},
     {'title': 'Dead Poets Society', 'year': '1989'},
